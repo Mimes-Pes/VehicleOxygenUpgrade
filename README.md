@@ -12,8 +12,7 @@
 
 Oxygen usage also consumes energy and equals to a 50% of default game vehicle Oxygen energy cost. Using VehiclePowerUpgradeModule decreases energy usage further. This is stackable of up to 4 modules. Energy usage can be turned off in mod options.
 
-|    Number of Vehicle     |  % of base  |
-|   PowerUpgradeModules    | Energy Used |
+|Number of Vehicle PowerUpgradeModules |% of base Energy Used|
 | ------------------------ |:-----------:|
 | 1                        |    40       |
 | 2                        |    30       |
