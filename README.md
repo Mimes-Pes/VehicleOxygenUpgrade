@@ -10,7 +10,7 @@
 
 ### It is a mod which removes oxygen supply by Seamoth and Exosuit until the upgrade is used:
 
-Oxygen usage also consumes energy and equals to a 50% of default game vehicle Oxygen energy cost. Using VehiclePowerUpgradeModule decreases energy usage further. This is stackable of up to 4 modules.
+Oxygen usage also consumes energy and equals to a 50% of default game vehicle Oxygen energy cost. Using VehiclePowerUpgradeModule decreases energy usage further. This is stackable of up to 4 modules. Energy usage can be turned off in mod options.
 
 |       # of Vehicle-      |  % of base  |
 |   PowerUpgradeModules    | Energy Used |
