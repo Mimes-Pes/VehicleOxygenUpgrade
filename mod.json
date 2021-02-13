@@ -1,0 +1,15 @@
+{
+  "Id": "VehicleOxygenUpgrade",
+  "DisplayName": "Vehicle Oxygen Upgrade",
+  "Author": "Mimes",
+  "Version": "0.0.2",
+  "Requires": [],
+  "LoadAfter": [
+    "OxygenTank"
+  ],
+  "AssemblyName": "VehicleOxygenUpgrade.dll",
+  "EntryMethod": "VehicleOxygenUpgrade.MainPatcher.Patch",
+  "Config": {},
+  "Dependencies": [],
+  "Enable": true
+}
