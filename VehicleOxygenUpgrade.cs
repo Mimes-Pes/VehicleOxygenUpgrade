@@ -77,10 +77,13 @@ namespace VehicleOxygenUpgrade  // Name of the mod.
         [HarmonyPrefix]      // Harmony Prefix
         public static bool Prefix(ref Vehicle __instance)
         {
-            if (Player.main.currentMountedVehicle.modules.GetCount(Modules.VehicleOxygenUpgradeModule.TechTypeID) == 0)            
-                __instance.replenishesOxygen = false;            
-            else            
-                __instance.replenishesOxygen = true;
+            if(Player.main.currentMountedVehicle != null)
+            {
+                if (Player.main.currentMountedVehicle.modules.GetCount(Modules.VehicleOxygenUpgradeModule.TechTypeID) == 0)
+                    __instance.replenishesOxygen = false;
+                else
+                    __instance.replenishesOxygen = true;
+            }
             
             return true;
 
@@ -104,51 +107,54 @@ namespace VehicleOxygenUpgrade  // Name of the mod.
         [HarmonyPostfix]      // Harmony postfix
         public static void Postfix(Vehicle __instance)
         {
-
-            if (Player.main.currentMountedVehicle == __instance && Config.UseEnergyToggleValue)
+            if (Player.main.currentMountedVehicle != null)
             {
-                var efficiencyLoaded = __instance.modules.GetCount(TechType.VehiclePowerUpgradeModule);
-                //float energyCost = 0.1f; // vanilla 0.1f per sec 
-                float energyCost = Player.main.currentMountedVehicle.oxygenEnergyCost;
-                
-                switch (efficiencyLoaded)
+                if (Player.main.currentMountedVehicle == __instance && Config.UseEnergyToggleValue)
                 {
-                    case 0:
-                        energyCost *= 0.5f;
-                        break;
-                    case 1:
-                        energyCost *= 0.4f;
-                        break;
-                    case 2:
-                        energyCost *= 0.3f;
-                        break;
-                    case 3:
-                        energyCost *= 0.2f;
-                        break;
-                    default:
-                        energyCost *= 0.1f;
-                        break;
-                }
+                    var efficiencyLoaded = __instance.modules.GetCount(TechType.VehiclePowerUpgradeModule);
+                    //float energyCost = 0.1f; // vanilla 0.1f per sec 
+                    float energyCost = Player.main.currentMountedVehicle.oxygenEnergyCost;
 
-                // Consume energy for continuously replenishing oxygen
-                OxygenManager oxygenMgr = Player.main.oxygenMgr;
-                float oxygenAvailable;
-                float oxygenCapacity;
-                oxygenMgr.GetTotal(out oxygenAvailable, out oxygenCapacity);
+                    switch (efficiencyLoaded)
+                    {
+                        case 0:
+                            energyCost *= 0.5f;
+                            break;
+                        case 1:
+                            energyCost *= 0.4f;
+                            break;
+                        case 2:
+                            energyCost *= 0.3f;
+                            break;
+                        case 3:
+                            energyCost *= 0.2f;
+                            break;
+                        default:
+                            energyCost *= 0.1f;
+                            break;
+                    }
 
-                if (!OtherModsInfo.RefillableOxygenTankPresent)
-                {
-                    if (oxygenAvailable == oxygenCapacity)
-                        ConsumeOxygenEnergy(__instance, energyCost);
-                }
-                else
-                {
-                    //if (!Player.main.oxygenMgr.HasOxygenTank())
-                    if (Player.main.currentMountedVehicle.modules.GetCount(Modules.VehicleOxygenUpgradeModule.TechTypeID) > 0)
-                        ConsumeOxygenEnergy(__instance, energyCost);
-                }
+                    // Consume energy for continuously replenishing oxygen
+                    OxygenManager oxygenMgr = Player.main.oxygenMgr;
+                    float oxygenAvailable;
+                    float oxygenCapacity;
+                    oxygenMgr.GetTotal(out oxygenAvailable, out oxygenCapacity);
 
-            } // end if (main.currentMountedVehicle != null && Config.UseEnergyToggleValue)
+                    if (!OtherModsInfo.RefillableOxygenTankPresent)
+                    {
+                        if (oxygenAvailable == oxygenCapacity)
+                            ConsumeOxygenEnergy(__instance, energyCost);
+                    }
+                    else
+                    {
+                        //if (!Player.main.oxygenMgr.HasOxygenTank())
+                        if (Player.main.currentMountedVehicle.modules.GetCount(Modules.VehicleOxygenUpgradeModule.TechTypeID) > 0)
+                            ConsumeOxygenEnergy(__instance, energyCost);
+                    }
+
+                } // end if (main.currentMountedVehicle != null && Config.UseEnergyToggleValue)
+
+            }
 
         } // end public static void Postfix(Vehicle __instance)
 

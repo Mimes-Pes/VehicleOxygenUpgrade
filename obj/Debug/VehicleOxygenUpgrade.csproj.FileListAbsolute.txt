@@ -80,4 +80,3 @@ F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUp
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\QModManager.QMMLoader.dll
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\QModInstaller.xml
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\QModManager.QMMLoader.xml
-F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\obj\Debug\VehicleOxygenUpgrade.csprojAssemblyReference.cache
