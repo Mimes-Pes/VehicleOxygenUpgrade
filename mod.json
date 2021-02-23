@@ -2,10 +2,10 @@
   "Id": "VehicleOxygenUpgrade",
   "DisplayName": "Vehicle Oxygen Upgrade",
   "Author": "Mimes",
-  "Version": "0.0.3",
+  "Version": "0.0.5",
   "Requires": [],
   "LoadAfter": [
-    "OxygenTank"
+    "OxygenTank", "TorpedoImprovements", "PrawnSuitTorpedoDisplay", "Rm_VehicleLightsImproved", "SeamothEngineUpgrades"
   ],
   "AssemblyName": "VehicleOxygenUpgrade.dll",
   "EntryMethod": "VehicleOxygenUpgrade.MainPatcher.Patch",
