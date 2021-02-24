@@ -83,7 +83,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VehicleOxygenUpgrade.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Objects\AirVentInfo.cs" />
+    <Compile Include="Objects\OtherModsInfo.cs" />
+    <Compile Include="Objects\VehicleOxygenUpgradeModule.cs" />
+    <Compile Include="Options\Options.cs" />
+    <Compile Include="Patches\Exosuit_Update_Patch.cs" />
+    <Compile Include="Patches\OxygenManager_AddOxygenAtSurface_Patch.cs" />
+    <Compile Include="Patches\Player_CanBreathe_Patch.cs" />
+    <Compile Include="Patches\SeaMoth_Update_Patch.cs" />
+    <Compile Include="Patches\Vehicle_ReplenishOxygen_Patch.cs" />
+    <Compile Include="Patches\Vehicle_Start_Patch.cs" />
+    <Compile Include="Patches\Vehicle_Update_Patch.cs" />
     <Compile Include="MainPatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
