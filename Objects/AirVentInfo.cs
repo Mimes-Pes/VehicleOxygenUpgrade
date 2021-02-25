@@ -15,6 +15,7 @@ namespace VehicleOxygenUpgrade.Objects
         internal static string AirVentHUDTextAutoOpened = "Air vents auto opened";
         internal static string AirVentHUDTextAutoClosed = "Air vents auto closed";
         internal static string AirVentHUDTextClosed = "Air vents closed";
+
         internal static string colorYellow = "<color=yellow>";
         internal static string colorRed = "<color=red>";
         internal static string colorEnd = "</color>";
@@ -29,34 +30,43 @@ namespace VehicleOxygenUpgrade.Objects
             string thisText1 = Traverse.Create(HandReticle.main).Field("useText1").GetValue<string>();
             string thisText2 = Traverse.Create(HandReticle.main).Field("useText2").GetValue<string>();
 
+            if (Language.main.GetCurrentLanguage() == "German")
+            {
+                AirVentHUDTextPromptOpen = "Luftventile öffnen ";
+                AirVentHUDTextPromptClose = "Luftventile schließen ";
+                AirVentHUDTextAutoOpened = "Luftventile automatisch geöffnet";
+                AirVentHUDTextAutoClosed = "Luftventile automatisch geschlossen";
+                AirVentHUDTextClosed = "Luftventile geschlossen";
+            }
+
             // prompt for Air vent vents toggle
             if (Mathf.RoundToInt(Player.main.GetDepth()) > 0)
             {
-                stringBuilder.Append("<color=yellow>");
+                stringBuilder.Append(colorYellow);
                 if (Config.AirVentsAutoToggleValue)
-                    stringBuilder.Append("Air vents auto closed");
+                    stringBuilder.Append(AirVentHUDTextAutoClosed);
                 else
-                    stringBuilder.Append("Air vents closed");
-                stringBuilder.Append("</color>");
+                    stringBuilder.Append(AirVentHUDTextClosed);
+                stringBuilder.Append(colorEnd);
             }
             else
             {
                 if (Config.AirVentsAutoToggleValue)
                 {
-                    stringBuilder.Append("<color=yellow>");
-                    stringBuilder.Append("Air vents auto opened");
-                    stringBuilder.Append("</color>");
+                    stringBuilder.Append(colorYellow);
+                    stringBuilder.Append(AirVentHUDTextAutoOpened);
+                    stringBuilder.Append(colorEnd);
                 }
                 else
                 {
                     if (!AirVentsOn)
                     {
-                        stringBuilder.Append("<color=red>");
-                        stringBuilder.Append("Open air vents ");
-                        stringBuilder.Append("</color>");
+                        stringBuilder.Append(colorRed);
+                        stringBuilder.Append(AirVentHUDTextPromptOpen);
+                        stringBuilder.Append(colorEnd);
                     }
                     else
-                        stringBuilder.Append("Close air vents ");
+                        stringBuilder.Append(AirVentHUDTextPromptClose);
                     stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", Config.ToggleAirVentsKeybindValue.ToString());
                 }
             }
