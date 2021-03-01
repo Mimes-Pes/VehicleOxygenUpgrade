@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using VehicleOxygenUpgrade.Objects;
+using VehicleOxygenUpgrade.Configuration;
 
 namespace VehicleOxygenUpgrade.Patches
 {
@@ -11,12 +12,12 @@ namespace VehicleOxygenUpgrade.Patches
         [HarmonyPostfix]      // Harmony postfix
         public static void Postfix(SeaMoth __instance)
         {
-            Player main = Player.main;
-            if (main != null && main.currentMountedVehicle == __instance && !main.GetPDA().isInUse)
+            if (Config.ShowPlayerPromptsToggleValue)
             {
-                AirVentInfo.DisplayVehicleInfo();
-
-            } // end if (main != null && main.currentMountedVehicle == __instance && !main.GetPDA().isInUse)
+                Player main = Player.main;
+                if (main != null && main.currentMountedVehicle == __instance && !main.GetPDA().isInUse)
+                    AirVentInfo.DisplayVehicleInfo();
+            }
 
         } // end public static void Postfix(SeaMoth __instance)
 

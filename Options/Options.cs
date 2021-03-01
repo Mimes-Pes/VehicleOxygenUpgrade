@@ -12,6 +12,7 @@ namespace VehicleOxygenUpgrade.Options  // Name of the mod.
             ToggleChanged += Options_EnergyToggleChanged;
             ToggleChanged += Options_EasyEnergyToggleChanged;
             ToggleChanged += Options_AirVentsAutoToggleChanged;
+            ToggleChanged += Options_ShowPlayerPromptsToggleChanged;
 
             KeybindChanged += Options_ToggleAirVentsKeybindValueChanged;
 
@@ -40,6 +41,13 @@ namespace VehicleOxygenUpgrade.Options  // Name of the mod.
             PlayerPrefsExtra.SetBool("AirVentsAutoToggle", e.Value);
         }
 
+        public void Options_ShowPlayerPromptsToggleChanged(object sender, ToggleChangedEventArgs e)
+        {
+            if (e.Id != "showPlayerPromptsToggle") return;
+            Config.ShowPlayerPromptsToggleValue = e.Value;
+            PlayerPrefsExtra.SetBool("ShowPlayerPromptsToggle", e.Value);
+        }
+
 
         public void Options_ToggleAirVentsKeybindValueChanged(object sender, KeybindChangedEventArgs e)
         {
@@ -61,11 +69,10 @@ namespace VehicleOxygenUpgrade.Options  // Name of the mod.
         public override void BuildModOptions()
         {
             AddToggleOption("useEnergyToggle", "Enable energy usage", Config.UseEnergyToggleValue);
-            AddToggleOption("useEasyEnergyToggle", "Use easy energy usage mode", Config.UseEasyEnergyToggleValue);
-            AddToggleOption("airVentsAutoToggle", "Enable auto air vents", Config.AirVentsAutoToggleValue);
-
+            AddToggleOption("useEasyEnergyToggle", "Easy energy mode (requires Enable energy)", Config.UseEasyEnergyToggleValue);
+            AddToggleOption("airVentsAutoToggle", "Auto air vents", Config.AirVentsAutoToggleValue);
             AddKeybindOption("toggleAirVentsKeybindPress", "Toggle air vents key (manual)", GameInput.Device.Keyboard, Config.ToggleAirVentsKeybindValue);
-
+            AddToggleOption("showPlayerPromptsToggle", "Show player prompts", Config.ShowPlayerPromptsToggleValue);
             AddSliderOption("airVentsFontSizeSlider", "Font size air vents (defult is 25)", 10, 40, Config.AirVentsFontSizeSliderValue);
         }
     }

@@ -21,8 +21,17 @@ namespace VehicleOxygenUpgrade.Objects
         internal static string colorEnd = "</color>";
         internal static Text AirVentDisplayText;
         internal static GameObject gameObject;
-        internal static Vector3 AirVentHUDPosition = new Vector3(0f, -290f, 0f); // was 600, -185, 0
+        internal static Vector3 AirVentHUDPosition = new Vector3(0f, -270f, 0f); // was 600, -185, 0
         internal static Vector2 AirVentHUDSize = new Vector2(500f, 200f);
+
+        internal static void TranslateToGerman()
+        {
+            AirVentHUDTextPromptOpen = "Luftventile öffnen ";
+            AirVentHUDTextPromptClose = "Luftventile schließen ";
+            AirVentHUDTextAutoOpened = "Luftventile automatisch geöffnet";
+            AirVentHUDTextAutoClosed = "Luftventile automatisch geschlossen";
+            AirVentHUDTextClosed = "Luftventile geschlossen";
+        }
 
         internal static void DisplayVehicleInfo()
         {
@@ -32,11 +41,7 @@ namespace VehicleOxygenUpgrade.Objects
 
             if (Language.main.GetCurrentLanguage() == "German")
             {
-                AirVentHUDTextPromptOpen = "Luftventile öffnen ";
-                AirVentHUDTextPromptClose = "Luftventile schließen ";
-                AirVentHUDTextAutoOpened = "Luftventile automatisch geöffnet";
-                AirVentHUDTextAutoClosed = "Luftventile automatisch geschlossen";
-                AirVentHUDTextClosed = "Luftventile geschlossen";
+                TranslateToGerman();
             }
 
             // prompt for Air vent vents toggle
@@ -110,15 +115,29 @@ namespace VehicleOxygenUpgrade.Objects
                 if (Mathf.RoundToInt(Player.main.GetDepth()) > 0)
                 {
                     if (Config.AirVentsAutoToggleValue)
-                        AirVentDisplayText.text = colorYellow + AirVentHUDTextAutoClosed + colorEnd;
+                    {
+                        stringBuilder.Append(colorYellow);
+                        stringBuilder.Append(AirVentHUDTextAutoClosed);
+                        stringBuilder.Append(colorEnd);
+
+                    }
+                        //AirVentDisplayText.text = colorYellow + AirVentHUDTextAutoClosed + colorEnd;
                     else
-                        AirVentDisplayText.text = colorYellow + AirVentHUDTextClosed + colorEnd;
+                    //AirVentDisplayText.text = colorYellow + AirVentHUDTextClosed + colorEnd;
+                    {
+                        stringBuilder.Append(colorYellow);
+                        stringBuilder.Append(AirVentHUDTextClosed);
+                        stringBuilder.Append(colorEnd);
+                    }
                 }
                 else
                 {
                     if (Config.AirVentsAutoToggleValue)
                     {
-                        AirVentDisplayText.text = colorYellow + AirVentHUDTextAutoOpened + colorEnd;
+                        // AirVentDisplayText.text = colorYellow + AirVentHUDTextAutoOpened + colorEnd;
+                        stringBuilder.Append(colorYellow);
+                        stringBuilder.Append(AirVentHUDTextAutoOpened);
+                        stringBuilder.Append(colorEnd);
                     }
                     else
                     {
@@ -128,13 +147,13 @@ namespace VehicleOxygenUpgrade.Objects
                             stringBuilder.Append(AirVentHUDTextPromptOpen);
                             stringBuilder.Append(colorEnd);
                             stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", Config.ToggleAirVentsKeybindValue.ToString());
-                            //AirVentDisplayText.text = stringBuilder.ToString();
+                            //AirVentDisplayText.text = AirVentDisplayText.text + stringBuilder.ToString();
                         }
                         else
                         {
                             stringBuilder.Append(AirVentHUDTextPromptClose);
                             stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", Config.ToggleAirVentsKeybindValue.ToString());
-                            //AirVentDisplayText.text = stringBuilder.ToString();
+                            //AirVentDisplayText.text = AirVentDisplayText.text + stringBuilder.ToString();
                         }
                     }
                 }
@@ -146,7 +165,8 @@ namespace VehicleOxygenUpgrade.Objects
                 stringBuilder.Append("Toggle lights ");
                 string displayMidMouseButton = uGUI.GetDisplayTextForBinding("MouseButtonMiddle");
                 stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", displayMidMouseButton);
-                AirVentDisplayText.text = AirVentDisplayText.text + stringBuilder.ToString();
+                // AirVentDisplayText.text = AirVentDisplayText.text + stringBuilder.ToString();
+                AirVentDisplayText.text = stringBuilder.ToString();
 
                 gameObject2.SetActive(true);
             }

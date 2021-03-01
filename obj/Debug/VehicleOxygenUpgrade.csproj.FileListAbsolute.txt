@@ -84,3 +84,4 @@ F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUp
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\MonoMod.RuntimeDetour.dll
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\MonoMod.Utils.xml
 F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\bin\Debug\MonoMod.RuntimeDetour.xml
+F:\Games\Sims\Water Sims\Subnautica\Mods\Modding Tutorial\MyMods\VehicleOxygenUpgrade\VehicleOxygenUpgrade\obj\Debug\VehicleOxygenUpgrade.csprojAssemblyReference.cache

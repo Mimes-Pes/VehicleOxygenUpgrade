@@ -9,6 +9,7 @@ namespace VehicleOxygenUpgrade.Configuration  // Name of the mod.
         public static bool UseEnergyToggleValue;
         public static bool UseEasyEnergyToggleValue;
         public static bool AirVentsAutoToggleValue;
+        public static bool ShowPlayerPromptsToggleValue;
 
         public static KeyCode ToggleAirVentsKeybindValue;
 
@@ -18,7 +19,8 @@ namespace VehicleOxygenUpgrade.Configuration  // Name of the mod.
         {
             UseEnergyToggleValue = PlayerPrefsExtra.GetBool("UseEnergyToggle", true);
             UseEasyEnergyToggleValue = PlayerPrefsExtra.GetBool("UseEasyEnergyToggle", false);
-            AirVentsAutoToggleValue = PlayerPrefsExtra.GetBool("AirVentsAutoToggle", false);
+            AirVentsAutoToggleValue = PlayerPrefsExtra.GetBool("AirVentsAutoToggle", true);
+            ShowPlayerPromptsToggleValue = PlayerPrefsExtra.GetBool("ShowPlayerPromptsToggle", true);
 
             ToggleAirVentsKeybindValue = PlayerPrefsExtra.GetKeyCode("ToggleAirVentsKeybindPress", KeyCode.B);
 
