@@ -9,7 +9,7 @@ namespace VehicleOxygenUpgrade.Configuration  // Name of the mod.
         public static bool UseEnergyToggleValue;
         public static bool UseEasyEnergyToggleValue;
         public static bool AirVentsAutoToggleValue;
-        public static bool ShowPlayerPromptsToggleValue;
+        public static bool ShowPlayerPromptsToggleValue;        
 
         public static KeyCode ToggleAirVentsKeybindValue;
 

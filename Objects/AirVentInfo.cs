@@ -76,6 +76,8 @@ namespace VehicleOxygenUpgrade.Objects
                 }
             }
 
+            // stringBuilder.Append(GameInput.GetAnalogValueForButton(GameInput.Button.MoveForward).ToString());
+
             SeaMoth thisSeaMoth = Player.main.currentMountedVehicle.GetComponent<SeaMoth>();
             if (thisSeaMoth)
                 stringBuilder.Append('\n');
