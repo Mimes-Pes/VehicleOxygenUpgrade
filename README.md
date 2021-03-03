@@ -18,7 +18,7 @@ This mod removes oxygen supply from Seamoth and Exosuit until the upgrade is mad
 - Mod provides comprehensive player key prompts
 - Mod is fully customisable
 
-Making this upgrade requires:
+Making Vehicle Oxygen Upgrade module requires:
 
 | Ingredient          | Amount |
 | ------------------- |:------:|
@@ -27,10 +27,6 @@ Making this upgrade requires:
 | AirBladder          | 1      |
 
 Oxygen usage also consumes energy and equals to a 50% of default game Oxygen energy cost. In easy energy mode, it equals 40% of default game Oxygen energy cost. Using VehiclePowerUpgradeModule decreases energy usage further. This is stackable of up to 4 modules and up to 2 modules only in easy energy mode. Energy usage can be completely turned off in mod options.
-
-
-
-
 
 Vehicles now also have "Air Vents", which opens manually or automatically when vehicle is partially or fully surfaced. With opened Air Vents, vehicle without Vehicle Oxygen Upgrade Module are able to provide oxygen to player. When Oxygen Upgrade Module is inserted and Air Vents are open, energy consumption is eliminated completely. Air Vent opening can be fully automatic, triggered by vehicle surfacing or submerging. In manual mode, Air Vents can be opened or closed manually when vehicle is surfaced, and Air vents close themselves when vehicle submerges.
 
