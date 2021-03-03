@@ -72,7 +72,7 @@ When not ticked, it makes air vent opening manual with air vents self closing up
 
 - Show player prompts: When ticked, player is presented with information and content +/- situation specific key prompts for various functions.
 
-- Font size air vents: sets the font size for player prompts in Exosuit when using Rm_VehicleLightsImproved mod.
+- Font size air vents: sets the font size for player prompts in Exosuit when using Rm_VehicleLightsImproved and PrawnSuitTorpedoDisplay mod.
 
 ### Compatibility:
 The mod should be fully compatible with the following mods:
