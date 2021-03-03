@@ -12,9 +12,9 @@ This mod removes oxygen supply from Seamoth and Exosuit until the upgrade is mad
 - No oxygen is supplied to player piloting Seamoth or Exosuit until upgrade is made
 - All vehicles have now air vents which provide oxygen to player even without the Upgrade
 - There are 3 energy consumption modes:
- 1, No energy consumption
- 2, Easy energy mode
- 3, Default energy mode
+ 1. No energy consumption
+ 2. Easy energy mode
+ 3. Default energy mode
 - Mod provides comprehensive player key prompts
 - Mod is fully customisable
 
@@ -48,7 +48,7 @@ Vehicle Oxygen Upgrade mod is fully customisable:
 - Click on "Mods" button.
 - Scroll down to "Vehicle Oxygen Upgrade" section.
 
-Modifiers (options):
+#### Modifiers (options):
 - Enable energy usage: when ticked, vehicles provide player with oxygen at an energy cost.
 
 - Easy energy mode: when ticked, vehicles provide player with oxygen at areduced energy cost as follows:
