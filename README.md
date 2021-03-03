@@ -76,11 +76,11 @@ When not ticked, it makes air vent opening manual with air vents self closing up
 
 ### Compatibility:
 The mod should be fully compatible with the following mods:
-1, "OxygenTank"
-2, "TorpedoImprovements",
-3, "PrawnSuitTorpedoDisplay"
-4, "Rm_VehicleLightsImproved"
-5, "SeamothEngineUpgrades"
+1. "OxygenTank"
+2. "TorpedoImprovements",
+3. "PrawnSuitTorpedoDisplay"
+4. "Rm_VehicleLightsImproved"
+5. "SeamothEngineUpgrades"
 
 ### Languages:
 - English
