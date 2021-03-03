@@ -87,7 +87,7 @@ The mod should be fully compatible with the following mods:
 - German
 
 ### Known Issues:
-- May not work correctly if used with mods which modify oxygen consumption behaviour.
+- May not work correctly if used with mods not mentioned in the Compatibility section, which modify oxygen consumption behaviour.
 - Tested on various Subnautica versions.
 
 ### Credits:
@@ -95,3 +95,4 @@ The mod should be fully compatible with the following mods:
 - Pofessor Mimes for add-on features, options changes and re-coding
 - Sir Desperationfighter for add-on features, options changes, German translation and beta testing
 - Madam Kelsarhu for unrelenting beta testing
+- Sir Whitecane for general help while this mod was being recreated
