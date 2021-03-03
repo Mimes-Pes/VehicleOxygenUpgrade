@@ -66,7 +66,7 @@ Default Mod Energy Mode:
 | 4 or more                |    10       |
 
 - Auto air vents: When ticked, makes air vent management fully automatic. When the top of the vehicle emerges above the water, air vents automatically open. Without "Vehicle Oxygen Upgrade", player's oxygen will replenish with outside air. If player uses "Refillable Oxygen Tanks" mod, player will be able to breathe as if outside and O2 will not be consumed from refillable oxygen tanks. With "Vehicle Oxygen Upgrade" in use, vehicle will supply player at no energy cost if energy usage mode is enabled. Conversely, when the vehicle submerges, below the surface of water, air vents will automatically close.
-When not ticked, makes air vent opening manual with air vents self closing upon submersion. If a player chooses, he/she may open air vents manually, but only if the top of the vehicle is above the water. Without "Vehicle Oxygen Upgrade", player's oxygen will replenish with outside air. If player uses "Refillable Oxygen Tanks" mod, player will be able to breathe as if outside and O2 will not be consumed from refillable oxygen tanks.
+When not ticked, it makes air vent opening manual with air vents self closing upon submersion. If a player chooses, he/she may open air vents manually, but only if the top of the vehicle is above the water. Without "Vehicle Oxygen Upgrade", player's oxygen will replenish with outside air. If player uses "Refillable Oxygen Tanks" mod, player will be able to breathe as if outside and O2 will not be consumed from refillable oxygen tanks.
 
 - Toggle air vents key: player customisable key assignment for manual opening and closing of air vents (only works in manual mode with vehicle surfaced)
 
