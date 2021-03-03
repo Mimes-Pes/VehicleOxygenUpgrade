@@ -2,7 +2,7 @@
   "Id": "VehicleOxygenUpgrade",
   "DisplayName": "Vehicle Oxygen Upgrade",
   "Author": "Mimes",
-  "Version": "0.0.7",
+  "Version": "0.0.8",
   "Requires": [],
   "LoadAfter": [
     "OxygenTank", "TorpedoImprovements", "PrawnSuitTorpedoDisplay", "Rm_VehicleLightsImproved", "SeamothEngineUpgrades"

@@ -86,7 +86,8 @@ namespace VehicleOxygenUpgrade.Patches
 
                 if (KeyCodeUtils.GetKeyDown(Config.ToggleAirVentsKeybindValue))
                 {
-                    if (Mathf.RoundToInt(Player.main.GetDepth()) == 0)
+                    //if (Mathf.RoundToInt(Player.main.GetDepth()) < Objects.AirVentInfo.DepthDetection)
+                    if (Player.main.GetDepth() < AirVentInfo.DepthDetection)
                     {
                         if (AirVentInfo.AirVentsOn == false)
                             AirVentInfo.AirVentsOn = true;
@@ -95,7 +96,8 @@ namespace VehicleOxygenUpgrade.Patches
                     }
                 }
 
-                if (Mathf.RoundToInt(Player.main.GetDepth()) > 0)
+                // (Mathf.RoundToInt(Player.main.GetDepth()) > Objects.AirVentInfo.DepthDetection)
+                if (Player.main.GetDepth() > AirVentInfo.DepthDetection)
                 {
                     if (AirVentInfo.AirVentsOn == true)
                         AirVentInfo.AirVentsOn = false;

@@ -15,13 +15,19 @@ namespace VehicleOxygenUpgrade.Patches
             if (modOxygenTank != null && modOxygenTank.IsLoaded)
             {
                 OtherModsInfo.RefillableOxygenTankPresent = true;
-            } // end if (modOxygenTank != null && mod.IsLoaded)
+            }
 
             IQMod modPrawnSuitTorpedoDisplay = QModServices.Main.FindModById("PrawnSuitTorpedoDisplay");
             if (modPrawnSuitTorpedoDisplay != null && modPrawnSuitTorpedoDisplay.IsLoaded)
             {
                 OtherModsInfo.PrawnSuitTorpedoDisplayPresent = true;
-            } // end if (modOxygenTank != null && mod.IsLoaded)
+            }
+
+            IQMod modRm_VehicleLightsImproved = QModServices.Main.FindModById("Rm_VehicleLightsImproved");
+            if (modRm_VehicleLightsImproved != null && modRm_VehicleLightsImproved.IsLoaded)
+            {
+                OtherModsInfo.Rm_VehicleLightsImprovedPresent = true;
+            }
 
         } // end public static void Postfix()
 

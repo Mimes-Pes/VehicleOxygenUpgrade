@@ -15,6 +15,7 @@ namespace VehicleOxygenUpgrade.Objects
         internal static string AirVentHUDTextAutoOpened = "Air vents auto opened";
         internal static string AirVentHUDTextAutoClosed = "Air vents auto closed";
         internal static string AirVentHUDTextClosed = "Air vents closed";
+        internal static float DepthDetection = 1.5f;
 
         internal static string colorYellow = "<color=yellow>";
         internal static string colorRed = "<color=red>";
@@ -45,7 +46,7 @@ namespace VehicleOxygenUpgrade.Objects
             }
 
             // prompt for Air vent vents toggle
-            if (Mathf.RoundToInt(Player.main.GetDepth()) > 0)
+            if (Player.main.GetDepth() > DepthDetection)
             {
                 stringBuilder.Append(colorYellow);
                 if (Config.AirVentsAutoToggleValue)
@@ -81,10 +82,16 @@ namespace VehicleOxygenUpgrade.Objects
             SeaMoth thisSeaMoth = Player.main.currentMountedVehicle.GetComponent<SeaMoth>();
             if (thisSeaMoth)
                 stringBuilder.Append('\n');
+            //else
+            //{
+            //    if (!Objects.OtherModsInfo.Rm_VehicleLightsImprovedPresent)
+            //        stringBuilder.Append('\n');
+            //}
             stringBuilder.Append(thisText1);
             string result = stringBuilder.ToString();
             HandReticle.main.SetUseTextRaw(result, thisText2);
         }
+
 
         internal static void DisplayVehicleInfoForPSTD(Exosuit thisExosuit)
         {
@@ -114,7 +121,7 @@ namespace VehicleOxygenUpgrade.Objects
                 StringBuilder stringBuilder = new StringBuilder();
 
                 // Air vents display
-                if (Mathf.RoundToInt(Player.main.GetDepth()) > 0)
+                if (Player.main.GetDepth() > DepthDetection)
                 {
                     if (Config.AirVentsAutoToggleValue)
                     {
@@ -160,13 +167,18 @@ namespace VehicleOxygenUpgrade.Objects
                     }
                 }
 
-                stringBuilder.Append('\n');
-                stringBuilder.Append("Exit ");
-                stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", KeyCodeUtils.KeyCodeToString(KeyCode.E));
-                stringBuilder.Append('\n');
-                stringBuilder.Append("Toggle lights ");
-                string displayMidMouseButton = uGUI.GetDisplayTextForBinding("MouseButtonMiddle");
-                stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", displayMidMouseButton);
+                if (OtherModsInfo.Rm_VehicleLightsImprovedPresent)
+                {
+                    stringBuilder.Append('\n');
+                    stringBuilder.Append("Exit ");
+                    stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", KeyCodeUtils.KeyCodeToString(KeyCode.E));
+                    stringBuilder.Append('\n');
+
+                    stringBuilder.Append("Toggle lights ");
+                    string displayMidMouseButton = uGUI.GetDisplayTextForBinding("MouseButtonMiddle");
+                    stringBuilder.AppendFormat("(<color=#ADF8FFFF>{0}</color>)", displayMidMouseButton);
+                }  
+
                 // AirVentDisplayText.text = AirVentDisplayText.text + stringBuilder.ToString();
                 AirVentDisplayText.text = stringBuilder.ToString();
 
